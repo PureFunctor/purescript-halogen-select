@@ -10,7 +10,7 @@ import Effect.Aff.Class (class MonadAff)
 import Halogen as H
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
-import Halogen.Hooks (class HookEquals, class HookNewtype, type (<>), Hook, HookM, StateId, UseEffect, UseState)
+import Halogen.Hooks (class HookNewtype, type (<>), Hook, HookM, StateId, UseEffect, UseState)
 import Halogen.Hooks as Hooks
 import Halogen.Hooks.Extra.Actions.Events (preventKeyEvent, preventMouseEvent)
 import Halogen.Hooks.Extra.Hooks (UseDebouncer, useDebouncer)
@@ -170,8 +170,7 @@ type UseSelect' =
     <> Hooks.Pure
 
 instance newtypeUseDebouncer
-  :: HookEquals UseSelect' h
-  => HookNewtype UseSelect h
+  :: HookNewtype UseSelect UseSelect'
 
 -- | A `SelectInput` value whose defaults can be overrided. **Note**:
 -- | `getItemCount` must be overrided:
