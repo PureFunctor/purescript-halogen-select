@@ -116,15 +116,10 @@ let additions =
   }
 -------------------------------
 -}
-
-
 let upstream =
-      https://github.com/purescript/package-sets/releases/download/psc-0.13.6-20200507/packages.dhall sha256:9c1e8951e721b79de1de551f31ecb5a339e82bbd43300eb5ccfb1bf8cf7bbd62
+      https://github.com/purescript/package-sets/releases/download/psc-0.14.0-20210329/packages.dhall sha256:32c90bbcd8c1018126be586097f05266b391f6aea9125cf10fba2292cb2b8c73
 
-let overrides =
-      { halogen-hooks = upstream.halogen-hooks // { version = "v0.4.0" }
-      , halogen-hooks-extra = upstream.halogen-hooks-extra // { version = "v0.6.0" }
-      }
+let overrides = {=}
 
 let additions = {=}
 
